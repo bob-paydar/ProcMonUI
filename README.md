@@ -10,24 +10,24 @@ Built in pure Win32 API, it requires no frameworks (MFC/WTL) and is fast, portab
 
 ## ✨ Features
 
-- **List running processes** with:
+- List running processes with:
   - PID
   - Parent PID
   - Memory usage (RSS)
   - Process name
   - Full path
-- **Search filter** (live) by name or path
-- **Actions:**
+- Search filter (live) by name or path
+- Actions:
   - Kill process
   - Suspend process
   - Resume process
   - Apply actions to process tree
-- **Export process list:**
+- Export process list:
   - JSON (UTF-8, BOM)
   - CSV (UTF-8, BOM)
-- **Status bar**: shows “Ready — Bob.Paydar@hp.com”
-- **Auto-refresh after actions** (refresh, kill, suspend, resume, export)
-- **No background refresh** (does not block user interaction)
+- Real status bar at the bottom: **"Ready - Bob.Paydar@hp.com"**
+- Auto-refresh after actions (refresh, kill, suspend, resume, export)
+- No background refresh (does not block user interaction)
 
 ---
 
@@ -54,19 +54,20 @@ Steps:
 
 ## 📸 UI Overview
 
-- **Search box** with label
-- **Buttons:** Refresh, Kill, Suspend, Resume, Export JSON, Export CSV
-- **Tree checkbox** to act recursively on children
-- **Status bar** with author contact
-- **ListView** with all processes, sortable by memory usage
+- Search label + box (live filter)
+- Buttons: Refresh, Kill, Suspend, Resume, Export JSON, Export CSV
+- "Tree" checkbox to act recursively on children
+- Status bar with fixed text
+- ListView with processes (PID, PPID, RSS, Name, Path)
 
 ---
 
 ## ⚠ Notes
 
 - Some actions require Administrator rights (especially for system/privileged processes).
-- `NtSuspendProcess` / `NtResumeProcess` are undocumented APIs, but safe to use for utilities.
+- `NtSuspendProcess` / `NtResumeProcess` are undocumented APIs available in `ntdll.dll`.
 - Memory usage (RSS) is approximate.
+- The app intentionally avoids background timers to remain responsive.
 
 ---
 
