@@ -57,7 +57,6 @@ Steps:
 - Search label + box (live filter)
 - Buttons: Refresh, Kill, Suspend, Resume, Export JSON, Export CSV
 - "Tree" checkbox to act recursively on children
-- Status bar with fixed text
 - ListView with processes (PID, PPID, RSS, Name, Path)
 
 ---
